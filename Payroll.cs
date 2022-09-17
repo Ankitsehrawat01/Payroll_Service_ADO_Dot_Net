@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ADODOTNETEmployeePayroll 
+namespace ADODOTNETEmployeePayroll
 {
     public class Payroll
     {
@@ -82,5 +82,31 @@ namespace ADODOTNETEmployeePayroll
             }
             return false;
         }
+        public static void Update()
+        { 
+            try
+            {
+                //writing sql query
+                string query = "Update Employee_Payroll set Basic_Pay = 3000000 where Name = 'Terissa'";
+                SqlCommand cm = new SqlCommand(query, con);
+                //Opening Connection
+                con.Open();
+                //Executing the SQL query
+                cm.ExecuteNonQuery();
+                //Displaying a message
+                Console.WriteLine("Table Updated Successfully");
+                Console.WriteLine("--------------------------");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Something Went Wrong " + e);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
+}
+
 

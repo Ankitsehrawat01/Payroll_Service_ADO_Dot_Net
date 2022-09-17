@@ -9,7 +9,8 @@
             {
                 Console.WriteLine("Welcome to Customer Database");
                 Console.WriteLine("1) Create Database\n" +
-                                  "2) Retrive data from Database\n");
+                                  "2) Retrive data from Database\n" +
+                                  "3) Update Data in Payroll");
                 int result = (int)Convert.ToInt64(Console.ReadLine());
                 switch (result)
                 {
@@ -19,6 +20,9 @@
                     case 2:
                         Payroll payrollobj = new Payroll();
                         payrollobj.Display();
+                        break;
+                    case 3:
+                        Payroll.Update();
                         break;
                 }
             }
